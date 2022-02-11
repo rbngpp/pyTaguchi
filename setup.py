@@ -1,14 +1,19 @@
-from distutils.core import setup
-setup(
+import setuptools
+
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
   name = 'pyTaguchi',         
   packages = ['pyTaguchi'],   
-  version = '0.1',      
+  version = '0.4',      
   license='MIT',       
-  description = 'Taguchi Tables made easy',   
+  description = 'Taguchi designs made easy',   
+  long_description=long_description,
   author = 'Giuseppe Rubino',                   
   author_email = 'giusepperubino@hotmail.co.uk',     
   url = 'https://github.com/rbngpp/pyTaguchi', 
-  download_url = 'https://github.com/rbngpp/pyTaguchi/archive/refs/tags/v0.3.tar.gz',
+  download_url = 'https://github.com/rbngpp/pyTaguchi/archive/refs/tags/v0.4.tar.gz',
   keywords = ['DOE', 'TAGUCHI', 'DESIGN', 'EXPERIMENT', 'R&D'],  
   install_requires=[           
           'numpy',
