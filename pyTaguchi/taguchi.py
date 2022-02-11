@@ -48,10 +48,14 @@ class Taguchi():
             self.design ='L16b'
             self.OBSERVATIONS = 16
             self.design_L16b()
-        elif self.FACTORS == 7 and self.LEVELS ==2:
+        elif self.FACTORS == 7 and self.LEVELS == 2:
             self.design = 'L8'
             self.OBSERVATIONS = 8
             self.design_L8()
+        elif self.FACTORS == 11 and self.LEVELS == 2:
+            self.design = "L12"
+            self.OBSERVATIONS = 12 
+            self.design_L12()
         else:
             raise Exception("Taguchi design not available.")
         
@@ -321,3 +325,151 @@ class Taguchi():
         self.matrix[[7],[4]] = self.variables[4].values[0]
         self.matrix[[7],[5]] = self.variables[5].values[0]
         self.matrix[[7],[6]] = self.variables[6].values[1]
+        
+    def design_L12(self):
+        # L12: https://www.york.ac.uk/depts/maths/tables/l12.gif
+        self.matrix = zeros((12,11))
+        # Row 1 :   1,1,1     1,1,1   1,1,1   1,1
+        self.matrix[[0],[0]] = self.variables[0].values[0]
+        self.matrix[[0],[1]] = self.variables[1].values[0]    
+        self.matrix[[0],[2]] = self.variables[2].values[0]
+        self.matrix[[0],[3]] = self.variables[3].values[0]
+        self.matrix[[0],[4]] = self.variables[4].values[0]
+        self.matrix[[0],[5]] = self.variables[5].values[0]
+        self.matrix[[0],[6]] = self.variables[6].values[0]
+        self.matrix[[0],[7]] = self.variables[7].values[0]
+        self.matrix[[0],[8]] = self.variables[8].values[0]
+        self.matrix[[0],[9]] = self.variables[9].values[0]
+        self.matrix[[0],[10]] = self.variables[10].values[0]
+        # Row 2 :   1,1,1     1,1,2   2,2,2   2,2
+        self.matrix[[1],[0]] = self.variables[0].values[0]
+        self.matrix[[1],[1]] = self.variables[1].values[0]    
+        self.matrix[[1],[2]] = self.variables[2].values[0]
+        self.matrix[[1],[3]] = self.variables[3].values[0]
+        self.matrix[[1],[4]] = self.variables[4].values[0]
+        self.matrix[[1],[5]] = self.variables[5].values[1]
+        self.matrix[[1],[6]] = self.variables[6].values[1]
+        self.matrix[[1],[7]] = self.variables[7].values[1]
+        self.matrix[[1],[8]] = self.variables[8].values[1]
+        self.matrix[[1],[9]] = self.variables[9].values[1]
+        self.matrix[[1],[10]] = self.variables[10].values[1]
+        # Row 3 :   1,1,2     2,2,1   1,1,2   2,2
+        self.matrix[[2],[0]] = self.variables[0].values[0]
+        self.matrix[[2],[1]] = self.variables[1].values[0]    
+        self.matrix[[2],[2]] = self.variables[2].values[1]
+        self.matrix[[2],[3]] = self.variables[3].values[1]
+        self.matrix[[2],[4]] = self.variables[4].values[1]
+        self.matrix[[2],[5]] = self.variables[5].values[0]
+        self.matrix[[2],[6]] = self.variables[6].values[0]
+        self.matrix[[2],[7]] = self.variables[7].values[0]
+        self.matrix[[2],[8]] = self.variables[8].values[1]
+        self.matrix[[2],[9]] = self.variables[9].values[1]
+        self.matrix[[2],[10]] = self.variables[10].values[1]
+        # Row 4 :   1,2,1     2,2,1   2,2,1   1,2
+        self.matrix[[3],[0]] = self.variables[0].values[0]
+        self.matrix[[3],[1]] = self.variables[1].values[1]    
+        self.matrix[[3],[2]] = self.variables[2].values[0]
+        self.matrix[[3],[3]] = self.variables[3].values[1]
+        self.matrix[[3],[4]] = self.variables[4].values[1]
+        self.matrix[[3],[5]] = self.variables[5].values[0]
+        self.matrix[[3],[6]] = self.variables[6].values[1]
+        self.matrix[[3],[7]] = self.variables[7].values[1]
+        self.matrix[[3],[8]] = self.variables[8].values[0]
+        self.matrix[[3],[9]] = self.variables[9].values[0]
+        self.matrix[[3],[10]] = self.variables[10].values[1]
+        # Row 5 :   1,2,2     1,2,2   1,2,1   2,1
+        self.matrix[[4],[0]] = self.variables[0].values[0]
+        self.matrix[[4],[1]] = self.variables[1].values[1]    
+        self.matrix[[4],[2]] = self.variables[2].values[1]
+        self.matrix[[4],[3]] = self.variables[3].values[0]
+        self.matrix[[4],[4]] = self.variables[4].values[1]
+        self.matrix[[4],[5]] = self.variables[5].values[1]
+        self.matrix[[4],[6]] = self.variables[6].values[0]
+        self.matrix[[4],[7]] = self.variables[7].values[1]
+        self.matrix[[4],[8]] = self.variables[8].values[0]
+        self.matrix[[4],[9]] = self.variables[9].values[1]
+        self.matrix[[4],[10]] = self.variables[10].values[0]
+        # Row 6 :   1,2,2     2,1,2   2,1,2   1,1
+        self.matrix[[5],[0]] = self.variables[0].values[0]
+        self.matrix[[5],[1]] = self.variables[1].values[1]    
+        self.matrix[[5],[2]] = self.variables[2].values[1]
+        self.matrix[[5],[3]] = self.variables[3].values[1]
+        self.matrix[[5],[4]] = self.variables[4].values[0]
+        self.matrix[[5],[5]] = self.variables[5].values[1]
+        self.matrix[[5],[6]] = self.variables[6].values[1]
+        self.matrix[[5],[7]] = self.variables[7].values[0]
+        self.matrix[[5],[8]] = self.variables[8].values[1]
+        self.matrix[[5],[9]] = self.variables[9].values[0]
+        self.matrix[[5],[10]] = self.variables[10].values[0]
+        # Row 7 :   2,1,2     2,1,1   2,2,1   2,1
+        self.matrix[[6],[0]] = self.variables[0].values[1]
+        self.matrix[[6],[1]] = self.variables[1].values[0]    
+        self.matrix[[6],[2]] = self.variables[2].values[1]
+        self.matrix[[6],[3]] = self.variables[3].values[1]
+        self.matrix[[6],[4]] = self.variables[4].values[0]
+        self.matrix[[6],[5]] = self.variables[5].values[0]
+        self.matrix[[6],[6]] = self.variables[6].values[1]
+        self.matrix[[6],[7]] = self.variables[7].values[1]
+        self.matrix[[6],[8]] = self.variables[8].values[0]
+        self.matrix[[6],[9]] = self.variables[9].values[1]
+        self.matrix[[6],[10]] = self.variables[10].values[0]
+        # Row 8 :   2,1,2     1,2,2   2,1,1   1,2
+        self.matrix[[7],[0]] = self.variables[0].values[1]
+        self.matrix[[7],[1]] = self.variables[1].values[0]    
+        self.matrix[[7],[2]] = self.variables[2].values[1]
+        self.matrix[[7],[3]] = self.variables[3].values[0]
+        self.matrix[[7],[4]] = self.variables[4].values[1]
+        self.matrix[[7],[5]] = self.variables[5].values[1]
+        self.matrix[[7],[6]] = self.variables[6].values[1]
+        self.matrix[[7],[7]] = self.variables[7].values[0]
+        self.matrix[[7],[8]] = self.variables[8].values[0]
+        self.matrix[[7],[9]] = self.variables[9].values[0]
+        self.matrix[[7],[10]] = self.variables[10].values[1]
+        # Row 9 :   2,1,1     2,2,2   1,2,2   1,1
+        self.matrix[[8],[0]] = self.variables[0].values[1]
+        self.matrix[[8],[1]] = self.variables[1].values[0]    
+        self.matrix[[8],[2]] = self.variables[2].values[0]
+        self.matrix[[8],[3]] = self.variables[3].values[1]
+        self.matrix[[8],[4]] = self.variables[4].values[1]
+        self.matrix[[8],[5]] = self.variables[5].values[1]
+        self.matrix[[8],[6]] = self.variables[6].values[0]
+        self.matrix[[8],[7]] = self.variables[7].values[1]
+        self.matrix[[8],[8]] = self.variables[8].values[1]
+        self.matrix[[8],[9]] = self.variables[9].values[0]
+        self.matrix[[8],[10]] = self.variables[10].values[0]
+        # Row 10 :   2,2,2     1,1,1   1,2,2   1,2
+        self.matrix[[9],[0]] = self.variables[0].values[1]
+        self.matrix[[9],[1]] = self.variables[1].values[1]    
+        self.matrix[[9],[2]] = self.variables[2].values[1]
+        self.matrix[[9],[3]] = self.variables[3].values[0]
+        self.matrix[[9],[4]] = self.variables[4].values[0]
+        self.matrix[[9],[5]] = self.variables[5].values[0]
+        self.matrix[[9],[6]] = self.variables[6].values[0]
+        self.matrix[[9],[7]] = self.variables[7].values[1]
+        self.matrix[[9],[8]] = self.variables[8].values[1]
+        self.matrix[[9],[9]] = self.variables[9].values[0]
+        self.matrix[[9],[10]] = self.variables[10].values[1]
+        # Row 11 :   2,2,1     2,1,2   1,1,1   2,2
+        self.matrix[[10],[0]] = self.variables[0].values[1]
+        self.matrix[[10],[1]] = self.variables[1].values[1]    
+        self.matrix[[10],[2]] = self.variables[2].values[0]
+        self.matrix[[10],[3]] = self.variables[3].values[1]
+        self.matrix[[10],[4]] = self.variables[4].values[0]
+        self.matrix[[10],[5]] = self.variables[5].values[1]
+        self.matrix[[10],[6]] = self.variables[6].values[0]
+        self.matrix[[10],[7]] = self.variables[7].values[0]
+        self.matrix[[10],[8]] = self.variables[8].values[0]
+        self.matrix[[10],[9]] = self.variables[9].values[1]
+        self.matrix[[10],[10]] = self.variables[10].values[1]
+        # Row 12 :   2,2,1     1,2,1   2,1,2   2,1
+        self.matrix[[11],[0]] = self.variables[0].values[1]
+        self.matrix[[11],[1]] = self.variables[1].values[1]    
+        self.matrix[[11],[2]] = self.variables[2].values[0]
+        self.matrix[[11],[3]] = self.variables[3].values[0]
+        self.matrix[[11],[4]] = self.variables[4].values[1]
+        self.matrix[[11],[5]] = self.variables[5].values[0]
+        self.matrix[[11],[6]] = self.variables[6].values[1]
+        self.matrix[[11],[7]] = self.variables[7].values[0]
+        self.matrix[[11],[8]] = self.variables[8].values[1]
+        self.matrix[[11],[9]] = self.variables[9].values[1]
+        self.matrix[[11],[10]] = self.variables[10].values[0]

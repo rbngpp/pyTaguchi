@@ -3,7 +3,10 @@ Taguchi designs made easy.
 More infos about: [Engineering Statistics Handbook](https://www.itl.nist.gov/div898/handbook/pri/section5/pri56.htm)
 
 ## Changelog
-
+### v.0.3
+- Added L12 Taguchi design.
+#### v.0.2
+- Added function to randomize runs
 #### v.0.1
 - Initial Release
 - Added L4, L9, L16b and L8 Taguchi designs. 
