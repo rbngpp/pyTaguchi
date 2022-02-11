@@ -55,10 +55,17 @@ tg.add(var2)
 tg.add(var3)
 tg.add(var4)
 ```
-4. Run and get plotted matrix
+4. Run and get plotted matrix 
 ```sh
 tg.run()
 ```
+... or if you want to randomize the runs: 
+```sh
+tg.run(randomize=True)
+```
+5. Expected output
+
+![](resources/taguchi_table_example.png)
 
 ## License
 
