@@ -1,4 +1,4 @@
-from numpy import size, zeros
+from numpy import size, zeros, random
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -19,12 +19,14 @@ class Taguchi():
         var = Variable(name,value)
         self.variables.append(var)
     
-    def run(self):   
+    def run(self, randomize=False):   
         assert size(self.variables) > 0, "Empty vector"
         self.FACTORS = size(self.variables)
         self.LEVELS = self.variables[0].dof
         self.check_dof()
         self.generate_design()
+        if randomize == True:
+            self.randomize_runs()
         self.generate_df()
         self.generate_plot()
 
@@ -51,7 +53,10 @@ class Taguchi():
             self.OBSERVATIONS = 8
             self.design_L8()
         else:
-            raise Exception("Taguchi design not available.") 
+            raise Exception("Taguchi design not available.")
+        
+    def randomize_runs(self):  
+        self.matrix = self.matrix[random.choice(self.matrix.shape[0], self.matrix.shape[0], replace=False)]
     
     def generate_df(self):
         self.columns = []
