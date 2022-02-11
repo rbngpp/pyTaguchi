@@ -8,7 +8,7 @@ setup(
   author = 'Giuseppe Rubino',                   
   author_email = 'giusepperubino@hotmail.co.uk',     
   url = 'https://github.com/rbngpp/pyTaguchi', 
-  download_url = 'https://github.com/rbngpp/pyTaguchi/archive/refs/tags/v0.1.tar.gz',
+  download_url = 'https://github.com/rbngpp/pyTaguchi/archive/refs/tags/v0.2.tar.gz',
   keywords = ['DOE', 'TAGUCHI', 'DESIGN', 'EXPERIMENT', 'R&D'],  
   install_requires=[           
           'numpy',
