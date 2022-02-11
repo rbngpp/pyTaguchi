@@ -1,6 +1,6 @@
 # pyTaguchi
 Taguchi designs made easy.
-More infos about: [Engineering Statistics Handbook](httpshttps://www.itl.nist.gov/div898/handbook/pri/section5/pri56.htm)
+More infos about: [Engineering Statistics Handbook](https://www.itl.nist.gov/div898/handbook/pri/section5/pri56.htm)
 
 ## Changelog
 
