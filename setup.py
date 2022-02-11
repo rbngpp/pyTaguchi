@@ -9,7 +9,7 @@ setuptools.setup(
   version = '0.4',      
   license='MIT',       
   description = 'Taguchi designs made easy',   
-  long_description=long_description,
+  #long_description=long_description,  # only restructured, no .md!
   author = 'Giuseppe Rubino',                   
   author_email = 'giusepperubino@hotmail.co.uk',     
   url = 'https://github.com/rbngpp/pyTaguchi', 

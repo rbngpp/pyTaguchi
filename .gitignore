@@ -1,1 +1,8 @@
 dist/*
+pyTaguchi/__pycache__/__init__.cpython-39.pyc
+pyTaguchi/__pycache__/taguchi.cpython-39.pyc
+pyTaguchi.egg-info/PKG-INFO
+pyTaguchi.egg-info/SOURCES.txt
+pyTaguchi.egg-info/requires.txt
+pyTaguchi.egg-info/dependency_links.txt
+pyTaguchi.egg-info/top_level.txt
